@@ -1,0 +1,28 @@
+{
+  "name": "ultimate-tower-rpg",
+  "version": "1.0.0",
+  "description": "Advanced action RPG tower crawler built with JavaScript and HTML5 Canvas.",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve .",
+    "build": "echo \"No build step configured yet\"",
+    "deploy": "gh-pages -d ."
+  },
+  "keywords": [
+    "rpg",
+    "tower",
+    "action-rpg",
+    "javascript",
+    "html5",
+    "canvas",
+    "roguelike",
+    "game"
+  ],
+  "author": "k b",
+  "license": "MIT",
+  "devDependencies": {
+    "gh-pages": "^6.1.1",
+    "serve": "^14.2.1"
+  }
+}

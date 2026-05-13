@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    />
+
+    <title>Ultimate Tower RPG</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- =====================================
+         Game Container
+    ====================================== -->
+
+    <div id="gameContainer">
+
+        <!-- =====================================
+             Main Canvas
+        ====================================== -->
+
+        <canvas
+            id="gameCanvas"
+            width="1280"
+            height="720"
+        ></canvas>
+
+        <!-- =====================================
+             HUD
+        ====================================== -->
+
+        <div id="hud">
+
+            <!-- Health -->
+            <div class="barContainer">
+                <div
+                    id="healthBar"
+                    class="bar"
+                    style="width: 100%;"
+                ></div>
+            </div>
+
+            <!-- Mana -->
+            <div class="barContainer">
+                <div
+                    id="manaBar"
+                    class="bar"
+                    style="width: 100%;"
+                ></div>
+            </div>
+
+            <!-- Stamina -->
+            <div class="barContainer">
+                <div
+                    id="staminaBar"
+                    class="bar"
+                    style="width: 100%;"
+                ></div>
+            </div>
+
+            <!-- Player Info -->
+            <div id="playerInfo">
+
+                <div class="infoText">
+                    Name:
+                    <span id="playerName">
+                        Hunter
+                    </span>
+                </div>
+
+                <div class="infoText">
+                    Class:
+                    <span id="playerClass">
+                        Rogue
+                    </span>
+                </div>
+
+                <div class="infoText">
+                    Subclass:
+                    <span id="playerSubclass">
+                        Shadow Assassin
+                    </span>
+                </div>
+
+                <div class="infoText">
+                    Rank:
+                    <span id="playerRank">
+                        F
+                    </span>
+                </div>
+
+                <div class="infoText">
+                    Level:
+                    <span id="playerLevel">
+                        1
+                    </span>
+                </div>
+
+                <div class="infoText">
+                    Gold:
+                    <span id="playerGold">
+                        0
+                    </span>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- =====================================
+             Boss Health Bar
+        ====================================== -->
+
+        <div id="bossBarContainer">
+
+            <div id="bossName">
+                Tower Boss
+            </div>
+
+            <div id="bossHealthBackground">
+
+                <div id="bossHealthBar"></div>
+
+            </div>
+        </div>
+
+        <!-- =====================================
+             Skill Bar
+        ====================================== -->
+
+        <div id="skillBar">
+
+            <div class="skillSlot">Q</div>
+
+            <div class="skillSlot">E</div>
+
+            <div class="skillSlot">R</div>
+
+            <div class="skillSlot">F</div>
+
+            <div class="skillSlot">ULT</div>
+
+        </div>
+
+        <!-- =====================================
+             Inventory
+        ====================================== -->
+
+        <div id="inventory">
+
+            <h1>Inventory</h1>
+
+            <div id="inventoryGrid">
+
+                <div class="inventorySlot"></div>
+                <div class="inventorySlot"></div>
+                <div class="inventorySlot"></div>
+                <div class="inventorySlot"></div>
+                <div class="inventorySlot"></div>
+                <div class="inventorySlot"></div>
+
+                <div class="inventorySlot"></div>
+                <div class="inventorySlot"></div>
+                <div class="inventorySlot"></div>
+                <div class="inventorySlot"></div>
+                <div class="inventorySlot"></div>
+                <div class="inventorySlot"></div>
+
+                <div class="inventorySlot"></div>
+                <div class="inventorySlot"></div>
+                <div class="inventorySlot"></div>
+                <div class="inventorySlot"></div>
+                <div class="inventorySlot"></div>
+                <div class="inventorySlot"></div>
+
+                <div class="inventorySlot"></div>
+                <div class="inventorySlot"></div>
+                <div class="inventorySlot"></div>
+                <div class="inventorySlot"></div>
+                <div class="inventorySlot"></div>
+                <div class="inventorySlot"></div>
+
+            </div>
+        </div>
+
+        <!-- =====================================
+             Pause Menu
+        ====================================== -->
+
+        <div id="pauseMenu">
+
+            <h1>Paused</h1>
+
+            <button class="menuButton">
+                Resume
+            </button>
+
+            <button class="menuButton">
+                Settings
+            </button>
+
+            <button class="menuButton">
+                Save Game
+            </button>
+
+            <button class="menuButton">
+                Main Menu
+            </button>
+
+        </div>
+
+        <!-- =====================================
+             Notifications
+        ====================================== -->
+
+        <div id="notifications"></div>
+
+        <!-- =====================================
+             Mobile Controls
+        ====================================== -->
+
+        <div id="mobileControls">
+
+            <!-- Left Joystick -->
+            <div id="joystickBase">
+
+                <div id="joystickStick"></div>
+
+            </div>
+
+            <!-- Action Buttons -->
+
+            <div
+                id="attackButton"
+                class="mobileButton"
+            >
+                ⚔
+            </div>
+
+            <div
+                id="jumpButton"
+                class="mobileButton"
+            >
+                ↑
+            </div>
+
+            <div
+                id="dodgeButton"
+                class="mobileButton"
+            >
+                ⬤
+            </div>
+
+            <div
+                id="skillButton"
+                class="mobileButton"
+            >
+                ✦
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- =====================================
+         JavaScript Files
+    ====================================== -->
+
+    <!-- Core -->
+    <script type="module" src="./js/main.js"></script>
+
+</body>
+</html>
