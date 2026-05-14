@@ -1086,4 +1086,17 @@ export class RoomManager {
             "#ffffff";
 
         ctx.font =
-            "20px Ar
+            "20px Arial";
+
+        ctx.fillText(
+
+            room.type.toUpperCase(),
+
+            room.x + 20,
+
+            room.y + 30
+        );
+
+        ctx.restore();
+    }
+}
