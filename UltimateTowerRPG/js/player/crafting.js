@@ -998,4 +998,287 @@ export class CraftingSystem {
         const centerY =
             this.game.canvas.height / 2;
 
-        // ============
+        // =====================================
+        // Particles
+        // =====================================
+
+        for (
+            let i = 0;
+            i < 30;
+            i++
+        ) {
+
+            this.game.effects
+                ?.createParticle({
+
+                    x: centerX,
+
+                    y: centerY,
+
+                    velocityX:
+                        (Math.random() - 0.5) * 12,
+
+                    velocityY:
+                        (Math.random() - 0.5) * 12,
+
+                    size:
+                        Math.random() * 6 + 2,
+
+                    color: "#ffaa44",
+
+                    life: 1
+                });
+        }
+
+        // =====================================
+        // Shake
+        // =====================================
+
+        this.game.effects
+            ?.shakeScreen(
+                5,
+                0.2
+            );
+    }
+
+    // =========================================
+    // Get Available Recipes
+    // =========================================
+
+    getAvailableRecipes() {
+
+        return this.recipes.filter(
+
+            recipe =>
+
+            recipe.station ===
+            this.currentStation
+        );
+    }
+
+    // =========================================
+    // Draw
+    // =========================================
+
+    draw(ctx) {
+
+        const x =
+            this.game.canvas.width - 350;
+
+        const y = 80;
+
+        // =====================================
+        // Background
+        // =====================================
+
+        ctx.fillStyle =
+            "rgba(0,0,0,0.7)";
+
+        ctx.fillRect(
+            x,
+            y,
+            320,
+            500
+        );
+
+        // =====================================
+        // Title
+        // =====================================
+
+        ctx.fillStyle =
+            "#ffffff";
+
+        ctx.font =
+            "24px Arial";
+
+        ctx.fillText(
+
+            "Crafting",
+
+            x + 20,
+
+            y + 40
+        );
+
+        // =====================================
+        // Level
+        // =====================================
+
+        ctx.font =
+            "18px Arial";
+
+        ctx.fillText(
+
+            `Level ${this.level}`,
+
+            x + 20,
+
+            y + 75
+        );
+
+        // =====================================
+        // XP Bar
+        // =====================================
+
+        const barWidth = 220;
+
+        ctx.fillStyle =
+            "#222222";
+
+        ctx.fillRect(
+
+            x + 20,
+            y + 90,
+
+            barWidth,
+            20
+        );
+
+        const progress =
+
+            this.experience /
+
+            this.experienceToNext;
+
+        ctx.fillStyle =
+            "#44ccff";
+
+        ctx.fillRect(
+
+            x + 20,
+            y + 90,
+
+            barWidth * progress,
+            20
+        );
+
+        // =====================================
+        // Station
+        // =====================================
+
+        ctx.fillStyle =
+            "#ffaa44";
+
+        ctx.fillText(
+
+            `Station: ${this.currentStation}`,
+
+            x + 20,
+
+            y + 140
+        );
+
+        // =====================================
+        // Recipes
+        // =====================================
+
+        let offsetY = 190;
+
+        const recipes =
+            this.getAvailableRecipes();
+
+        for (
+            const recipe of
+            recipes
+        ) {
+
+            const unlocked =
+
+                this.unlockedRecipes
+                    .includes(recipe.id);
+
+            ctx.fillStyle =
+
+                unlocked
+                ? "#ffffff"
+                : "#666666";
+
+            ctx.font =
+                "16px Arial";
+
+            ctx.fillText(
+
+                recipe.name,
+
+                x + 20,
+
+                y + offsetY
+            );
+
+            ctx.font =
+                "12px Arial";
+
+            ctx.fillText(
+
+                `Lv.${recipe.levelRequired}`,
+
+                x + 220,
+
+                y + offsetY
+            );
+
+            offsetY += 35;
+        }
+    }
+
+    // =========================================
+    // Save
+    // =========================================
+
+    save() {
+
+        return {
+
+            level:
+                this.level,
+
+            experience:
+                this.experience,
+
+            experienceToNext:
+                this.experienceToNext,
+
+            unlockedRecipes:
+                this.unlockedRecipes,
+
+            craftSpeed:
+                this.craftSpeed,
+
+            criticalCraftChance:
+                this.criticalCraftChance
+        };
+    }
+
+    // =========================================
+    // Load
+    // =========================================
+
+    load(data) {
+
+        if (
+            !data
+        ) {
+
+            return;
+        }
+
+        this.level =
+            data.level || 1;
+
+        this.experience =
+            data.experience || 0;
+
+        this.experienceToNext =
+            data.experienceToNext || 100;
+
+        this.unlockedRecipes =
+            data.unlockedRecipes ||
+            [];
+
+        this.craftSpeed =
+            data.craftSpeed || 1;
+
+        this.criticalCraftChance =
+            data.criticalCraftChance || 10;
+    }
+}

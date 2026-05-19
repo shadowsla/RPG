@@ -1,0 +1,145 @@
+{
+  "player": {
+    "name": "",
+    "class": "",
+    "subclass": "",
+
+    "level": 1,
+    "experience": 0,
+    "nextLevelXP": 100,
+
+    "stats": {
+      "health": 100,
+      "maxHealth": 100,
+
+      "mana": 50,
+      "maxMana": 50,
+
+      "stamina": 100,
+      "maxStamina": 100,
+
+      "strength": 5,
+      "dexterity": 5,
+      "intelligence": 5,
+      "vitality": 5,
+      "luck": 1,
+
+      "damage": 10,
+      "defense": 5,
+      "critChance": 0,
+      "critDamage": 1.5,
+      "speed": 4
+    },
+
+    "position": {
+      "x": 0,
+      "y": 0,
+      "floor": 1
+    },
+
+    "gold": 0,
+
+    "skillPoints": 0,
+    "attributePoints": 0,
+
+    "unlockedSkills": [],
+
+    "equipped": {
+      "weapon": null,
+      "helmet": null,
+      "chest": null,
+      "gloves": null,
+      "boots": null,
+      "ring": null,
+      "artifact": null
+    },
+
+    "inventory": [],
+
+    "quests": {
+      "active": [],
+      "completed": []
+    }
+  },
+
+  "world": {
+    "currentFloor": 1,
+
+    "difficulty": "normal",
+
+    "timePlayed": 0,
+
+    "weather": "clear",
+
+    "dayNightCycle": {
+      "time": 12,
+      "isNight": false
+    },
+
+    "bossesDefeated": [],
+
+    "eventsCompleted": [],
+
+    "secretsFound": 0,
+
+    "checkpointsUnlocked": [1]
+  },
+
+  "settings": {
+    "masterVolume": 1,
+    "musicVolume": 1,
+    "sfxVolume": 1,
+
+    "fullscreen": false,
+
+    "screenShake": true,
+
+    "particles": "medium",
+
+    "showDamageNumbers": true,
+
+    "showFPS": false,
+
+    "language": "en",
+
+    "mobileControls": false
+  },
+
+  "statistics": {
+    "enemiesKilled": 0,
+
+    "bossesKilled": 0,
+
+    "deaths": 0,
+
+    "criticalHits": 0,
+
+    "damageDealt": 0,
+
+    "damageTaken": 0,
+
+    "goldCollected": 0,
+
+    "itemsCrafted": 0,
+
+    "potionsUsed": 0
+  },
+
+  "achievements": [],
+
+  "multiplayer": {
+    "friends": [],
+
+    "guild": null,
+
+    "pvpRank": {
+      "tier": "Unranked",
+
+      "points": 0
+    }
+  },
+
+  "version": "1.0.0",
+
+  "lastSaved": null
+}

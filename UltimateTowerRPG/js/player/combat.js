@@ -1045,4 +1045,144 @@ export class CombatSystem {
                     velocityX:
                         (Math.random() - 0.5) * 20,
 
-   
+                    velocityY:
+                        (Math.random() - 0.5) * 20,
+
+                    size:
+                        Math.random() * 8 + 2,
+
+                    color: "#ff8844",
+
+                    life: 1
+                });
+        }
+    }
+
+    // =========================================
+    // Damage Numbers
+    // =========================================
+
+    showDamageNumber(
+        damage,
+        x,
+        y,
+        critical = false
+    ) {
+
+        this.showText(
+
+            damage.toString(),
+
+            x,
+
+            y,
+
+            critical
+            ? "#ffff44"
+            : "#ffffff"
+        );
+    }
+
+    // =========================================
+    // Floating Text
+    // =========================================
+
+    showText(
+        text,
+        x,
+        y,
+        color = "#ffffff"
+    ) {
+
+        this.game.effects
+            ?.createFloatingText({
+
+                text,
+
+                x,
+
+                y,
+
+                color
+            });
+    }
+
+    // =========================================
+    // Draw UI
+    // =========================================
+
+    draw(ctx) {
+
+        // =====================================
+        // Combo Counter
+        // =====================================
+
+        if (
+            this.combo > 1
+        ) {
+
+            ctx.fillStyle =
+                "#ffaa44";
+
+            ctx.font =
+                "bold 36px Arial";
+
+            ctx.fillText(
+
+                `${this.combo} COMBO`,
+
+                this.game.canvas.width / 2 - 100,
+
+                120
+            );
+        }
+
+        // =====================================
+        // Combat State
+        // =====================================
+
+        if (
+            this.inCombat
+        ) {
+
+            ctx.fillStyle =
+                "#ff4444";
+
+            ctx.font =
+                "18px Arial";
+
+            ctx.fillText(
+
+                "IN COMBAT",
+
+                this.game.canvas.width - 180,
+
+                40
+            );
+        }
+
+        // =====================================
+        // Parry Cooldown
+        // =====================================
+
+        if (
+            this.parryCooldown > 0
+        ) {
+
+            ctx.fillStyle =
+                "#44ccff";
+
+            ctx.font =
+                "16px Arial";
+
+            ctx.fillText(
+
+                `Parry CD: ${this.parryCooldown.toFixed(1)}`,
+
+                20,
+
+                160
+            );
+        }
+    }
+}

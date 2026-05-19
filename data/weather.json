@@ -1,0 +1,182 @@
+{
+  "currentWeather": {
+    "type": "clear",
+    "temperature": 22,
+    "humidity": 0.45,
+    "windSpeed": 4,
+    "windDirection": "east",
+
+    "visibility": 1,
+
+    "cloudCoverage": 0.1,
+
+    "lightning": false,
+
+    "fog": false,
+
+    "rainIntensity": 0,
+
+    "snowIntensity": 0
+  },
+
+  "weatherStates": {
+    "clear": {
+      "skyColor": "#6db8ff",
+
+      "cloudDensity": 0.1,
+
+      "ambientLight": 1,
+
+      "particleEffect": null,
+
+      "music": "clear_day"
+    },
+
+    "rain": {
+      "skyColor": "#5a6c7d",
+
+      "cloudDensity": 0.8,
+
+      "ambientLight": 0.7,
+
+      "particleEffect": "rain",
+
+      "music": "rain_theme",
+
+      "rainIntensity": 0.7
+    },
+
+    "storm": {
+      "skyColor": "#343c4f",
+
+      "cloudDensity": 1,
+
+      "ambientLight": 0.45,
+
+      "particleEffect": "stormRain",
+
+      "music": "storm_theme",
+
+      "rainIntensity": 1,
+
+      "lightningChance": 0.08
+    },
+
+    "snow": {
+      "skyColor": "#dbeeff",
+
+      "cloudDensity": 0.6,
+
+      "ambientLight": 0.9,
+
+      "particleEffect": "snow",
+
+      "music": "snow_theme",
+
+      "snowIntensity": 0.8
+    },
+
+    "fog": {
+      "skyColor": "#b7bcc4",
+
+      "cloudDensity": 0.5,
+
+      "ambientLight": 0.6,
+
+      "particleEffect": "fog",
+
+      "music": "fog_theme",
+
+      "fogDensity": 0.85
+    },
+
+    "bloodMoon": {
+      "skyColor": "#550000",
+
+      "cloudDensity": 0.3,
+
+      "ambientLight": 0.25,
+
+      "particleEffect": "embers",
+
+      "music": "bloodmoon_theme",
+
+      "enemyBuff": 1.5,
+
+      "rareSpawnBoost": 2
+    }
+  },
+
+  "dynamicWeather": {
+    "enabled": true,
+
+    "changeInterval": 300,
+
+    "transitionDuration": 10,
+
+    "possibleWeather": [
+      "clear",
+      "rain",
+      "storm",
+      "snow",
+      "fog"
+    ]
+  },
+
+  "weatherEffects": {
+    "rain": {
+      "playerMovementMultiplier": 0.95,
+
+      "projectileAccuracyMultiplier": 0.92,
+
+      "fireDamageMultiplier": 0.8
+    },
+
+    "storm": {
+      "playerMovementMultiplier": 0.9,
+
+      "enemySpawnRateMultiplier": 1.25,
+
+      "lightningDamage": 40
+    },
+
+    "snow": {
+      "playerMovementMultiplier": 0.85,
+
+      "jumpMultiplier": 0.9,
+
+      "icePhysics": true
+    },
+
+    "fog": {
+      "visionDistance": 450,
+
+      "enemyDetectionMultiplier": 1.4
+    },
+
+    "bloodMoon": {
+      "enemyDamageMultiplier": 1.5,
+
+      "enemyHealthMultiplier": 1.4,
+
+      "lootMultiplier": 2
+    }
+  },
+
+  "forecast": [
+    {
+      "time": 0,
+      "weather": "clear"
+    },
+    {
+      "time": 300,
+      "weather": "rain"
+    },
+    {
+      "time": 600,
+      "weather": "storm"
+    }
+  ],
+
+  "version": "1.0.0"
+}
